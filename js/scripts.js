@@ -9,3 +9,14 @@ function calculateLeapYear(year) {
     return false;
   }
 }
+
+$(document).ready(function(){
+  $("#enter").click(function(){
+
+    var yearInput = parseInt($("input#year").val());
+    var result = calculateLeapYear(yearInput);
+
+    $(".output").text(result);
+
+  });
+});
