@@ -57,13 +57,23 @@ function moveConsonants(word){
   return wordArray.join("") + "ay" ;
 }
 
-
 function pigLatinWord(word) {
   if (startsWithVowel(word)) {
     return word + "way" ;
   } else if(startsWithConsonant(word)) {
     return moveConsonants(word);
   } else {
-    // Add an error case
+    console.log("Error: " + word);
   }
+}
+
+function pigLatin(sentence) {
+  var latinWords = [];
+  var words = sentence.split(" ");
+
+  words.forEach(function(word){
+    latinWords.push(pigLatinWord(word));
+  });
+  
+  return latinWords.join(' ');
 }
