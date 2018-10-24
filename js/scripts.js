@@ -34,14 +34,25 @@ function startsWithConsonant(word){
   return false;
 }
 
+function moveFirstCharToEnd(array) {
+  var moveChar = array.shift();
+  array.push(moveChar);
+
+  return moveChar;
+}
+
 function moveConsonants(word){
   var wordArray = word.split('');
 
+  var lastCharMoved;
+
   for ( var i = 0 ; i < wordArray.length; i++){
     if(isConsonant(wordArray[0])) {
-      var firstChar = wordArray.shift();
-      wordArray.push(firstChar);
+      lastCharMoved = moveFirstCharToEnd(wordArray);
+    } else if((wordArray[0] == "u") && (lastCharMoved === "q")) {
+      moveFirstCharToEnd(wordArray);
     }
+    console.log(wordArray);
   }
 
   return wordArray.join("") + "ay" ;
