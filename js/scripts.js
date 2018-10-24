@@ -74,6 +74,15 @@ function pigLatin(sentence) {
   words.forEach(function(word){
     latinWords.push(pigLatinWord(word));
   });
-  
+
   return latinWords.join(' ');
 }
+
+
+$(function() {
+  $("#input").submit(function(event) {
+    event.preventDefault();
+    var sentence = $("#sentence").val();
+    $("#output").text(pigLatin(sentence));
+  })
+})
