@@ -38,6 +38,7 @@ function moveConsonants(word){
   var wordArray = word.split('') ;
   if(isConsonant(wordArray[0])) {
     var firstChar = wordArray.shift();
+    wordArray.push(firstChar);
 
     console.log("first char = ", firstChar, " arr=", wordArray);
   }

@@ -22,28 +22,16 @@ No known bugs
 _Email me at philrmass@gmail.com_
 
 ## Behavioral Specs
-* If it's not a letter, do nothing
-  * Input: 3
-  * Output: 3
-* If it's a vowel, add "way"
-  * Input: e
-  * Output: eway
 * If a word begins with a vowel, add "way" to the end
-  * Input: eat
-  * Output: eatway
-
-
-* If a word begins with one or more consonants, move all first consonants to the end, and add "ay"
-  * Input: then
-  * Output: enthay
-* If a word's first consonants include "qu", move "qu" to the end.
-  * Input1: quick
-  * Output1: ickquay
-  * Input2: squeal
-  * Output2: ealsquay
-* If a word begins with "y", treat "y" as a consonant
-  * yes
-  * esyay
+  * Expect piglatin("a") === "away"
+* If a word begins with a consonant, move it to the end and add "ay"
+  * Expect piglatin("hello") === "ellohay"
+* If a word begins with multiple consonants, move them to the end and add "ay"
+  * Expect piglatin("start") === "artstay"
+* If a word's first consonants are "qu", always move "qu" to the end, then add "ay"
+  * Expect piglatin("quick") === "ickquay"
+* If a word's consonants include "qu" not at the start, move all consonants including "qu" to the end, thn add "ay"
+  * Expect piglatin("squeal") === "ealsquay"
 
 ## Technologies Used
 
