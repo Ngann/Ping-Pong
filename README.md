@@ -25,7 +25,10 @@ _Email me at philrmass@gmail.com_
 * If it's not a letter, do nothing
   * Input: 3
   * Output: 3
-  
+* If it's a vowel, add "way"
+  * Input: e
+  * Output: eway
+
 * If a word begins with a vowel, add "way" to the end
   * Input: eat
   * Output: eatway
