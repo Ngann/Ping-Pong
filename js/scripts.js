@@ -13,7 +13,6 @@ function isVowel(char) {
 }
 
 // function isY(char) {
-//
 // }
 
 function isConsonant(char) {
