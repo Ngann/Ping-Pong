@@ -12,6 +12,13 @@ function isVowel(char) {
   return false;
 }
 
+function isConsonant(char) {
+  if(isLetter(char) && !isVowel(char)) {
+    return true;
+  }
+  return false;
+}
+
 function startsWithVowel(word) {
   if(isVowel(word.charAt(0))) {
     return true;
@@ -21,16 +28,29 @@ function startsWithVowel(word) {
 
 function startsWithConsonant(word){
   var firstChar = word.charAt(0);
-  if(isLetter(firstChar) && !isVowel(firstChar)) {
+  if(isConsonant(firstChar)) {
     return true;
   }
   return false;
 }
 
+function moveConsonants(word){
+  var wordArray = word.split('') ;
+  if(isConsonant(wordArray[0])) {
+    var firstChar = wordArray.shift();
+
+    console.log("first char = ", firstChar, " arr=", wordArray);
+  }
+
+  return wordArray.join("") + "ay" ;
+}
+
+
 function pigLatinWord(word) {
   if (startsWithVowel(word)) {
     return word + "way" ;
   } else if(startsWithConsonant(word)) {
+    // move con to end, add ay
   } else {
   }
 }
