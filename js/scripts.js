@@ -35,12 +35,13 @@ function startsWithConsonant(word){
 }
 
 function moveConsonants(word){
-  var wordArray = word.split('') ;
-  if(isConsonant(wordArray[0])) {
-    var firstChar = wordArray.shift();
-    wordArray.push(firstChar);
+  var wordArray = word.split('');
 
-    console.log("first char = ", firstChar, " arr=", wordArray);
+  for ( var i = 0 ; i < wordArray.length; i++){
+    if(isConsonant(wordArray[0])) {
+      var firstChar = wordArray.shift();
+      wordArray.push(firstChar);
+    }
   }
 
   return wordArray.join("") + "ay" ;
@@ -51,7 +52,8 @@ function pigLatinWord(word) {
   if (startsWithVowel(word)) {
     return word + "way" ;
   } else if(startsWithConsonant(word)) {
-    // move con to end, add ay
+    return moveConsonants(word);
   } else {
+    // Add an error case
   }
 }
