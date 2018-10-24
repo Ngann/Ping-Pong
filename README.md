@@ -1,39 +1,52 @@
-# _{Application Name}_
+# _Pig Latin_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A website to translate to Pig Latin, October 24, 2018_
 
-#### By _**{List of contributors}**_
+#### By _Phil Mass and Ngan Nguyen_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_It takes a string and turns it into Pig Latin_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* Clone from the repository
+* Open index.html in a browser
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+No known bugs
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Email me at philrmass@gmail.com_
+
+## Behavioral Specs
+* If it's not a letter, do nothing
+  * Input: 3
+  * Output: 3
+  
+* If a word begins with a vowel, add "way" to the end
+  * Input: eat
+  * Output: eatway
+* If a word begins with one or more consonants, move all first consonants to the end, and add "ay"
+  * Input: then
+  * Output: enthay
+* If a word's first consonants include "qu", move "qu" to the end.
+  * Input1: quick
+  * Output1: ickquay
+  * Input2: squeal
+  * Output2: ealsquay
+* If a word begins with "y", treat "y" as a consonant
+  * yes
+  * esyay
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_jQuery, Bootstrap, JavaScript, and CSS_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*MIT License*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
-
-https://www.learnhowtoprogram.com/intro-to-programming/git-html-and-css/homework-readmes
+Copyright (c) 2018 **_Phil Mass, Ngan Nguyen_**
