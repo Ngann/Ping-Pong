@@ -12,8 +12,12 @@ function isVowel(char) {
   return false;
 }
 
-// function isY(char) {
-// }
+function isY(char) {
+  if((char === "y") || (char === "Y")) {
+    return true;
+  }
+  return false;
+}
 
 function isConsonant(char) {
   if(isLetter(char) && !isVowel(char)) {
@@ -25,7 +29,7 @@ function isConsonant(char) {
 function startsWithVowel(word) {
   var firstChar = word.charAt(0);
 
-  if((firstChar === "y") || (firstChar === "Y")) {
+  if(isY(firstChar)) {
     return false;
   } else if(isVowel(word.charAt(0))) {
     return true;
@@ -36,7 +40,7 @@ function startsWithVowel(word) {
 function startsWithConsonant(word){
   var firstChar = word.charAt(0);
 
-  if(isConsonant(firstChar) || (firstChar === "y") || (firstChar === "Y")) {
+  if(isConsonant(firstChar) || isY(firstChar)) {
     return true;
   }
   return false;
@@ -55,8 +59,7 @@ function moveConsonants(word){
   var lastCharMoved;
 
   for ( var i = 0 ; i < wordArray.length; i++){
-    if(isConsonant(wordArray[0])
-      || (!lastCharMoved && ((wordArray[0] === "y") || (wordArray[0])))) {
+    if(isConsonant(wordArray[0]) || (!lastCharMoved && isY(wordArray[0]))) {
       lastCharMoved = moveFirstCharToEnd(wordArray);
     } else if((wordArray[0] == "u") && (lastCharMoved === "q")) {
       moveFirstCharToEnd(wordArray);
@@ -70,7 +73,6 @@ function pigLatinWord(word) {
   if (startsWithVowel(word)) {
     return word + "way" ;
   } else if(startsWithConsonant(word)) {
-    console.log("starts with consonent ", word)
     return moveConsonants(word);
   } else {
     console.log("Error: " + word);
