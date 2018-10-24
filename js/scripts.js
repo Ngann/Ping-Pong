@@ -52,7 +52,6 @@ function moveConsonants(word){
     } else if((wordArray[0] == "u") && (lastCharMoved === "q")) {
       moveFirstCharToEnd(wordArray);
     }
-    console.log(wordArray);
   }
 
   return wordArray.join("") + "ay" ;

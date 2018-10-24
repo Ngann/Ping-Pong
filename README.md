@@ -32,6 +32,8 @@ _Email me at philrmass@gmail.com_
   * Expect piglatin("quick") === "ickquay"
 * If a word's consonants include "qu" not at the start, move all consonants including "qu" to the end, thn add "ay"
   * Expect piglatin("squeal") === "ealsquay"
+* Perform the above rules on multiple words
+  * Expect piglatin("hello squeal") === "ellohay ealsquay"
 
 ## Technologies Used
 
