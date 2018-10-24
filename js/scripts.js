@@ -1,79 +1,27 @@
-function isLetter(char) {
-  if(((char >= "a") && (char <= "z")) || ((char >= "A") && (char <= "Z"))) {
+var binary = "100001";
+var binaryArray = binary.split('');
+
+function isBinary(input){
+  if (input === 0 || input === 1){
     return true;
   }
   return false;
 }
 
-function isVowel(char) {
-  if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u" || char === "y" || char === "A" || char === "E" || char === "I" || char === "O" || char === "U" || char === "Y") {
-    return true;
-  }
-  return false;
-}
-
-function isConsonant(char) {
-  if(isLetter(char) && !isVowel(char)) {
-    return true;
-  }
-  return false;
-}
-
-function startsWithVowel(word) {
-  if(isVowel(word.charAt(0))) {
-    return true;
-  }
-  return false;
-}
-
-function startsWithConsonant(word){
-  var firstChar = word.charAt(0);
-  if(isConsonant(firstChar)) {
-    return true;
-  }
-  return false;
-}
-
-function moveFirstCharToEnd(array) {
-  var moveChar = array.shift();
-  array.push(moveChar);
-
-  return moveChar;
-}
-
-function moveConsonants(word){
-  var wordArray = word.split('');
-
-  var lastCharMoved;
-
-  for ( var i = 0 ; i < wordArray.length; i++){
-    if(isConsonant(wordArray[0])) {
-      lastCharMoved = moveFirstCharToEnd(wordArray);
-    } else if((wordArray[0] == "u") && (lastCharMoved === "q")) {
-      moveFirstCharToEnd(wordArray);
+function isInputBinary(inputArray){
+  for (var i = 0; i < inputArray.length; i++ ){
+    if (!isBinary(parseInt(inputArray[i]))) {
+      return false;
     }
   }
-
-  return wordArray.join("") + "ay" ;
+  return true;
 }
 
-function pigLatinWord(word) {
-  if (startsWithVowel(word)) {
-    return word + "way" ;
-  } else if(startsWithConsonant(word)) {
-    return moveConsonants(word);
-  } else {
-    console.log("Error: " + word);
-  }
-}
-
-function pigLatin(sentence) {
-  var latinWords = [];
-  var words = sentence.split(" ");
-
-  words.forEach(function(word){
-    latinWords.push(pigLatinWord(word));
-  });
+for (var i= inputArray.lenght -1; i >= 0; i-- ){
   
-  return latinWords.join(' ');
 }
+
+// var num = parseInt(inputArray[i]);
+// if(!isBinary(num)) {
+//
+// if (!isBinary(parseInt(inputArray[i]))) {
