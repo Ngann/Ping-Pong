@@ -28,10 +28,11 @@ _Email me at philrmass@gmail.com_
 * If it's a vowel, add "way"
   * Input: e
   * Output: eway
-
 * If a word begins with a vowel, add "way" to the end
   * Input: eat
   * Output: eatway
+
+
 * If a word begins with one or more consonants, move all first consonants to the end, and add "ay"
   * Input: then
   * Output: enthay
